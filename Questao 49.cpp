@@ -2,9 +2,9 @@
 
 int main() {
     int N, i;
-    unsigned long long fatorial = 1;  // suporta valores grandes
+    unsigned long long fatorial = 1;  
 
-    // Leitura do valor N (com validação)
+    
     do {
         printf("Digite um valor inteiro e positivo: ");
         scanf("%d", &N);
@@ -13,12 +13,12 @@ int main() {
         }
     } while (N < 0);
 
-    // Cálculo do fatorial
+    
     for (i = 1; i <= N; i++) {
         fatorial *= i;
     }
 
-    // Exibição do resultado
+   
     printf("O fatorial de %d é: %llu\n", N, fatorial);
 
     return 0;
