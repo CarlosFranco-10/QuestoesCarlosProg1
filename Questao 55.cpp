@@ -1,26 +1,26 @@
 #include <stdio.h>
 
-// Função para verificar se o ano é bissexto
+
 int bissexto(int ano) {
     return (ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0);
 }
 
-// Função para contar o total de dias até a data fornecida
+
 int diasDesdeZero(int dia, int mes, int ano) {
     int diasMeses[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
     int totalDias = dia;
 
-    // Soma os dias dos meses anteriores no mesmo ano
+    
     for (int i = 0; i < mes - 1; i++) {
         totalDias += diasMeses[i];
     }
 
-    // Soma os dias de anos anteriores
+    
     for (int i = 0; i < ano; i++) {
         totalDias += bissexto(i) ? 366 : 365;
     }
 
-    // Ajusta se for ano bissexto e mês > fevereiro
+    
     if (bissexto(ano) && mes > 2) {
         totalDias += 1;
     }
