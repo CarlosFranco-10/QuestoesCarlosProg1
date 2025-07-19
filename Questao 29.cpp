@@ -1,29 +1,17 @@
 #include <stdio.h>
 
 int main() {
-    int n, i;
-    float S = 0;
+    int soma = 0;
+    int contador = 0;
 
-    printf("Digite um valor inteiro e positivo para n: ");
-    scanf("%d", &n);
-
-    while (n <= 0) {
-        printf("Valor inválido. Digite um número inteiro **positivo**: ");
-        scanf("%d", &n);
+    for (int i = 13; i <= 73; i++) {
+        soma += i;
+        contador++;
     }
 
-    printf("\nS = ");
+    float media = (float)soma / contador;
 
-    for (i = 1; i <= n; i++) {
-        S += 1.0 / i;
-
-        if (i == 1)
-            printf("1");
-        else
-            printf(" + 1/%d", i);
-    }
-
-    printf("\n\nValor final de S: %.6f\n", S);
+    printf("A média aritmética dos números entre 13 e 73 é: %.2f\n", media);
 
     return 0;
 }
